@@ -49,26 +49,21 @@ pip install -r requirements.txt
 
 1. Create a `.env` file in your root directory:
 
+   ### Spotify API Setup
+   
+   To use the widget, create an app at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and get your **Client ID**, **Client Secret**, and set the redirect URI to:
+   
+   ```
+   http://localhost:8888/callback
+   ```
+   
+   Then create a `.env` file in the root with:
+   
    ```env
-   SPOTIPY_CLIENT_ID=your_spotify_client_id
-   SPOTIPY_CLIENT_SECRET=your_spotify_secret
+   SPOTIPY_CLIENT_ID=your_client_id
+   SPOTIPY_CLIENT_SECRET=your_client_secret
    SPOTIPY_REDIRECT_URI=http://localhost:8888/callback
    ```
-### Spotify API Setup
-
-To use the widget, create an app at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and get your **Client ID**, **Client Secret**, and set the redirect URI to:
-
-```
-http://localhost:8888/callback
-```
-
-Then create a `.env` file in the root with:
-
-```env
-SPOTIPY_CLIENT_ID=your_client_id
-SPOTIPY_CLIENT_SECRET=your_client_secret
-SPOTIPY_REDIRECT_URI=http://localhost:8888/callback
-```
 ---
 
 2. Run it:
