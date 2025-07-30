@@ -35,6 +35,11 @@ Uses a custom 8-bit style font (`PressStart2P.ttf`) for retro vibes.
 You can **drag the widget anywhere** on your screen.
 Press **Ctrl + Right Click** to *dock it to the edge* of your screen for a cleaner look.
 
+![ss1](demo_images/ss1.png)
+
+![ss3](demo_images/ss3.png)
+
+
 ---
 
 ### 🧰 Requirements
