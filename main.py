@@ -54,7 +54,6 @@ def resource_path(relative_path):
     return os.path.join(os.path.abspath("."), relative_path)
 
 SETTINGS_FILE = resource_path("assets/spotify_widget_settings.json")
-os.makedirs(os.path.dirname(SETTINGS_FILE), exist_ok=True)
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -68,7 +67,7 @@ SCOPE = 'user-read-currently-playing user-read-playback-state user-modify-playba
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, redirect_uri=REDIRECT_URI, scope=SCOPE))
 
 class BatteryIndicator(QWidget):
-    def __init__(self, parent=None):
+    def __init__ (self, parent=None):
         super().__init__(parent)
         self.percentage = 100
         self.setFixedSize(30, 14)  # Smaller size
@@ -127,7 +126,7 @@ class DesktopSpotifyWidget(QWidget):
         # Apply loaded/default color
         self.setStyleSheet(f"background-color: {bg_color}; border-radius: 15px;")
 
-# --- replace your top bar block in __init__ with this ---
+# --- replace your top bar block in _init_ with this ---
 
                 # Top bar (single row, fixed height)
         # --- TOP BAR (pixel-perfect vertical centering) ---
@@ -585,7 +584,7 @@ class DesktopSpotifyWidget(QWidget):
             event.accept()
 
 
-'''if __name__ == "__main__":
+'''if _name_ == "_main_":
     app = QApplication(sys.argv)
     w = DesktopSpotifyWidget()
     app.setWindowIcon(QIcon("logo.png"))
