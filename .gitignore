@@ -1,0 +1,46 @@
+# ─── Python Cache ───────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ─── Virtual Environments ───────────────────────
+venv/
+.env/
+*.env
+*.env.*
+
+# ─── Build Artifacts ────────────────────────────
+build/
+dist/
+*.spec
+
+# ─── Project Secrets & Config ───────────────────
+spotifycred.env
+spotify_widget_settings.json
+
+# ─── IDE / Editor ───────────────────────────────
+.vscode/
+.idea/
+
+# ─── System Files ───────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.swp
+*~
+.env
+
+# ─── Fonts / Assets ─────────────────────────────
+*.ttf~
+*.woff
+*.woff2
+
+# ─── Logs / Temp ────────────────────────────────
+*.log
+*.bak
+*.tmp
+
+# ─── Exclude Test Script ────────────────────────
+test.py
