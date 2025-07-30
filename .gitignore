@@ -9,7 +9,7 @@ venv/
 
 # Ignore cache folders
 .cache/
-
+.cache
 # Ignore PyInstaller spec file (optional)
 spoopify.spec
 
