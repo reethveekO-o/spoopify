@@ -46,13 +46,15 @@ def derive_palette(base_hex: str) -> dict:
         "text": _hex(text),
     }
 
-SETTINGS_FILE = "spotify_widget_settings.json"
 
 def resource_path(relative_path):
     """Get absolute path to resource, works for dev and for PyInstaller"""
     if hasattr(sys, '_MEIPASS'):
         return os.path.join(sys._MEIPASS, relative_path)
     return os.path.join(os.path.abspath("."), relative_path)
+
+SETTINGS_FILE = resource_path("assets/spotify_widget_settings.json")
+os.makedirs(os.path.dirname(SETTINGS_FILE), exist_ok=True)
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -169,7 +171,7 @@ class DesktopSpotifyWidget(QWidget):
 
         # Settings
         self.settings_button = QPushButton()
-        self.settings_button.setIcon(QIcon(resource_path("settings.png")))
+        self.settings_button.setIcon(QIcon(resource_path("assets/settings.png")))
         self.settings_button.setIconSize(QSize(30, 30))   # keep visual size small
         self.settings_button.setFixedSize(22, 22)
         self.settings_button.setStyleSheet("""
@@ -216,7 +218,7 @@ class DesktopSpotifyWidget(QWidget):
             }
         """)
 
-        self.loading_movie = QMovie(resource_path("loading.gif"))
+        self.loading_movie = QMovie(resource_path("assets/loading.gif"))
         self.loading_movie.setScaledSize(QSize(200, 200))
         self.loading_movie.frameChanged.connect(self.update_loading_frame)
         self.loading_movie.start()
@@ -243,10 +245,10 @@ class DesktopSpotifyWidget(QWidget):
         self.next_button = QPushButton()
         self.transport_buttons = [self.prev_button, self.play_pause_button, self.next_button]
 
-        self.prev_icon = QIcon(resource_path("prev.png"))
-        self.play_icon = QIcon(resource_path("play.png"))
-        self.pause_icon = QIcon(resource_path("pause.png"))
-        self.next_icon = QIcon(resource_path("next.png"))
+        self.prev_icon = QIcon(resource_path("assets/prev.png"))
+        self.play_icon = QIcon(resource_path("assets/play.png"))
+        self.pause_icon = QIcon(resource_path("assets/pause.png"))
+        self.next_icon = QIcon(resource_path("assets/next.png"))
 
         for btn in [self.prev_button, self.play_pause_button, self.next_button]:
             btn.setFixedSize(40, 40)
@@ -593,7 +595,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     # Load custom font inside main
-    font_id = QFontDatabase.addApplicationFont(resource_path("PressStart2P.ttf"))
+    font_id = QFontDatabase.addApplicationFont(resource_path("assets/PressStart2P.ttf"))
     if font_id != -1:
         custom_font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
         app.setFont(QFont(custom_font_family, 8))  # Set global font
