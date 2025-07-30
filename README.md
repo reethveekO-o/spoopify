@@ -16,17 +16,8 @@ Shows the current song, artist, and album art by polling Spotify playback every 
 ✅ **Media Controls**
 Includes **Play**, **Pause**, **Next**, and **Previous** buttons.
 
-✅ **Rounded Album Art**
-Smooth rounded display for the album art using custom QPainter clipping.
-
-✅ **Loading Animation**
-Displays a loading animation when no track is currently playing or data is unavailable.
-
 ✅ **Always on Top**
-The widget stays above other windows so it's always visible.
-
-✅ **Settings JSON Support**
-Reads configuration from `assets/spotify_widget_settings.json`.
+The widget stays above other windows so it's always visible but on it turns invisible when not interacted with.
 
 ✅ **Font Customization**
 Uses a custom 8-bit style font (`PressStart2P.ttf`) for retro vibes.
@@ -108,7 +99,6 @@ pyinstaller main.py --noconfirm --onefile --windowed --icon=assets/logo.ico ^
 ### 🧠 Credits
 
 * Built using **Spotipy** and **PyQt5**
-* Designed with ❤️ for productivity and music
 
 ---
 
