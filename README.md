@@ -71,24 +71,6 @@ pip install -r requirements.txt
    ```bash
    python main.py
    ```
-
----
-
-#### 🧊 From EXE (compiled with PyInstaller):
-
-```bash
-pyinstaller main.py --noconfirm --onefile --windowed --icon=assets/logo.ico ^
---name spoopify ^
---add-data "assets\loading.gif;assets" ^
---add-data "assets\logo.png;assets" ^
---add-data "assets\next.png;assets" ^
---add-data "assets\pause.png;assets" ^
---add-data "assets\play.png;assets" ^
---add-data "assets\prev.png;assets" ^
---add-data "assets\settings.png;assets" ^
---add-data "assets\PressStart2P.ttf;assets" ^
---add-data "assets\spotify_widget_settings.json;assets"
-```
 ---
 
 ### 🧠 Credits
